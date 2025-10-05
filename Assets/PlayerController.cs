@@ -34,7 +34,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate(){
         float XmoveDistance = movementX * speed * Time.fixedDeltaTime;
         float YmoveDistance = movementY * speed * Time.fixedDeltaTime;
-        transform.position = new Vector2(transform.position.x + XmoveDistance, transform.position.y + YmoveDistance);
+        //transform.position = new Vector2(transform.position.x + XmoveDistance, transform.position.y + YmoveDistance);
+        rb.AddForce(new Vector2(XmoveDistance, YmoveDistance));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
