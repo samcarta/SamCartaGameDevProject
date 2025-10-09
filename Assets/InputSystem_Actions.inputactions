@@ -440,18 +440,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "27188e27-b0dc-46d4-8d37-a53f8bbb88b7",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "2D Vector",
+                    "name": "ArrowKeys",
                     "id": "5196cd5a-f3fc-4d5b-9a0a-3efc08c7466e",
                     "path": "2DVector",
                     "interactions": "",
@@ -467,7 +456,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Move1",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -478,7 +467,7 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Move1",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -489,7 +478,7 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Move1",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -500,7 +489,7 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Move1",
                     "isComposite": false,
                     "isPartOfComposite": true

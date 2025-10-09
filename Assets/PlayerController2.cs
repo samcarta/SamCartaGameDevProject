@@ -5,21 +5,25 @@ public class PlayerController2 : MonoBehaviour
 {
     float movementX;
     float movementY;
-    float speed = 7f;
-    
+    [SerializeField] float speed = 7f;
+
+    [SerializeField] Rigidbody2D rb;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void OnMove(InputValue value){
+
+    void OnMove1(InputValue value)
+    {
         Vector2 v = value.Get<Vector2>();
 
         movementX = v.x;
@@ -28,9 +32,13 @@ public class PlayerController2 : MonoBehaviour
         Debug.Log(v);
     }
 
-    void FixedUpdate(){
-        float XmoveDistance = movementX * speed * Time.fixedDeltaTime;
-        float YmoveDistance = movementY * speed * Time.fixedDeltaTime;
-        transform.position = new Vector2(transform.position.x + XmoveDistance, transform.position.y + YmoveDistance);
+    void FixedUpdate()
+    {
+        float XmoveDistance = movementX * speed;
+
+        rb.linearVelocityX = XmoveDistance;
+        //rb.linearVelocity = new Vector2(movementX,movementY).normalized;
+
     }
+
 }
