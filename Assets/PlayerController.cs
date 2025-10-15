@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     float movementX;
     float movementY;
     bool jumping = false;
+    private float horizontalInput;
     [SerializeField] float speed = 7f;
 
     [SerializeField] Rigidbody2D rb;
@@ -25,7 +26,24 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("walking", movementX != 0f);
+
+        if(movementX != 0f)
+            animator.SetBool("walking", movementX != 0f);
+        else if(jumping)
+            animator.SetBool("jumping",jumping);
+        else
+            animator.SetBool("walking", false);
+            animator.SetBool("jumping", false);
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (horizontalInput > 0f)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (horizontalInput < 0f)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
     }
 
 
@@ -35,7 +53,7 @@ public class PlayerController : MonoBehaviour
         movementX = v.x;
         movementY = v.y;
 
-        Debug.Log(v);
+        //Debug.Log(v);
     }
 
     void FixedUpdate(){
