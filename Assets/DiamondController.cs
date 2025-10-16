@@ -11,17 +11,23 @@ public class DiamondController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Diamond collected!");
+
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Diamond hit!");
+            collision.gameObject.GetComponent<PlayerController>().AddCoin(1);
             Destroy(gameObject);
         }
+    }
+
+
+
+    private void OnDestroy()
+    {
+        
     }
 
 }
